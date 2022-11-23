@@ -1,6 +1,9 @@
 @extends('layout.app')
 @section('content')
-<form>
+<div class="container" style="width:500px;">
+  
+  <h2 class="text-center">LOGIN</h2>
+  <form>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -14,6 +17,7 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary form-control">Submit</button>
+  </div>
 </form>
 @endsection

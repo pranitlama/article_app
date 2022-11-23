@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home;
+use App\Http\Controllers\registerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/',[home::class,'dashboard'])->name('dashboard');
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login',[home::class,'login'])->name('login');
+
+Route::get('/register',[home::class,'register'])->name('register');
+Route::post('/register',[registerController::class,'registeruser'])->name('registeruser');
