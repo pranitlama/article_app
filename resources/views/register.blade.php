@@ -1,9 +1,9 @@
 @extends('layout.app')
 @section('content')
-<div class="container"  style="width:500px;">
+<div class="container shadow p-3 mb-5  mt-5 bg-body rounded"  style="width:500px;">
     
     <h2 class="text-center">REGISTER</h2>
-    <form action="{{route('registeruser')}}" method="post">
+    <form action="{{route('registeruser')}}" method="Post">
         @csrf
         <div class="mb-3">
     <label  class="form-label">Name</label>
@@ -33,11 +33,11 @@
       </div>
     @enderror
   </div>
-  <div class="mb-3 form-check">
+  <!-- <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="form-control btn btn-primary">Submit</button>
+  </div> -->
+  <button type="submit" class="form-control btn btn-primary">Register</button>
   </div>
 </form>
 @endsection

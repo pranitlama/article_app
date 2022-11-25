@@ -15,9 +15,16 @@ use App\Http\Controllers\registerController;
 |
 */
 
-Route::get('/',[home::class,'dashboard'])->name('dashboard');
+Route::get('/',[home::class,'dashboard'])->name('dashboard')->middleware(['auth']);
 
 Route::get('/login',[home::class,'login'])->name('login');
+Route::post('/login',[registerController::class,'loginuser'])->name('loginuser');
 
 Route::get('/register',[home::class,'register'])->name('register');
 Route::post('/register',[registerController::class,'registeruser'])->name('registeruser');
+
+
+Route::get('/logout',[registerController::class,'logout'])->name('logout');
+
+
+
