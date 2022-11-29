@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Home;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\registerController;
 
 /*
@@ -21,6 +22,11 @@ Route::get('/login',[home::class,'login'])->name('login');
 Route::post('/login',[registerController::class,'loginuser'])->name('loginuser');
 
 Route::get('/register',[home::class,'register'])->name('register');
+Route::get('/delete/{id}',[PostController::class,'delete'])->name('delete');
+
+Route::post('/add',[PostController::class,'addpost'])->name('addpost');
+Route::get('/add',[PostController::class,'add'])->name('addpost');
+
 Route::post('/register',[registerController::class,'registeruser'])->name('registeruser');
 
 
