@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class user extends Model
+class Post extends Model
 {
     use HasFactory;
-    protected $fillable=['name','email','password'];
-    
-    public function post(){
-        return $this->hasMany(Post::class);
+    protected $fillable=['title','user_id'];
+    public function user(){
+        return $this->belongsTo(user::class);
     }
 }
